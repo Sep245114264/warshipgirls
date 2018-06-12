@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>奥赛罗</title>
+	
+	<!-- Bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="jqModal.css">
+	<script type="text/javascript" src="jqModal.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript" src="showanimation.js"></script>
+	<script type="text/javascript" src="support.js"></script>
+</head>
+<body>
+	<div id="header">
+	<h1>奥赛罗</h1>
+	<a href="javascript:new_game();" id="new_game_button">新游戏</a>
+	<p>行动方：<img id="turn"></img></p>
+	</div>
+	<div id="container">
+		<div class="col-md-4" id="points">
+				<p><img src="grass_ico.png"> <img src="0v0_normal_ico.png" id="stat_0v0"></p>
+				<span id="points_grass">0</span> <span id="points_0v0">0</span>
+				    
+		</div>
+		<div class="col-md-4" id="grid_container">
+
+			<div class="grid_cell" id="grid_cell_0_0"></div>
+			<div class="grid_cell" id="grid_cell_0_1"></div>
+			<div class="grid_cell" id="grid_cell_0_2"></div>
+			<div class="grid_cell" id="grid_cell_0_3"></div>
+			<div class="grid_cell" id="grid_cell_0_4"></div>
+			<div class="grid_cell" id="grid_cell_0_5"></div>
+			<div class="grid_cell" id="grid_cell_0_6"></div>
+			<div class="grid_cell" id="grid_cell_0_7"></div>
+
+			<div class="grid_cell" id="grid_cell_1_0"></div>
+			<div class="grid_cell" id="grid_cell_1_1"></div>
+			<div class="grid_cell" id="grid_cell_1_2"></div>
+			<div class="grid_cell" id="grid_cell_1_3"></div>
+			<div class="grid_cell" id="grid_cell_1_4"></div>
+			<div class="grid_cell" id="grid_cell_1_5"></div>
+			<div class="grid_cell" id="grid_cell_1_6"></div>
+			<div class="grid_cell" id="grid_cell_1_7"></div>
+
+			<div class="grid_cell" id="grid_cell_2_0"></div>
+			<div class="grid_cell" id="grid_cell_2_1"></div>
+			<div class="grid_cell" id="grid_cell_2_2"></div>
+			<div class="grid_cell" id="grid_cell_2_3"></div>
+			<div class="grid_cell" id="grid_cell_2_4"></div>
+			<div class="grid_cell" id="grid_cell_2_5"></div>
+			<div class="grid_cell" id="grid_cell_2_6"></div>
+			<div class="grid_cell" id="grid_cell_2_7"></div>
+
+			<div class="grid_cell" id="grid_cell_3_0"></div>
+			<div class="grid_cell" id="grid_cell_3_1"></div>
+			<div class="grid_cell" id="grid_cell_3_2"></div>
+			<div class="grid_cell" id="grid_cell_3_3"></div>
+			<div class="grid_cell" id="grid_cell_3_4"></div>
+			<div class="grid_cell" id="grid_cell_3_5"></div>
+			<div class="grid_cell" id="grid_cell_3_6"></div>
+			<div class="grid_cell" id="grid_cell_3_7"></div>
+
+			<div class="grid_cell" id="grid_cell_4_0"></div>
+			<div class="grid_cell" id="grid_cell_4_1"></div>
+			<div class="grid_cell" id="grid_cell_4_2"></div>
+			<div class="grid_cell" id="grid_cell_4_3"></div>
+			<div class="grid_cell" id="grid_cell_4_4"></div>
+			<div class="grid_cell" id="grid_cell_4_5"></div>
+			<div class="grid_cell" id="grid_cell_4_6"></div>
+			<div class="grid_cell" id="grid_cell_4_7"></div>
+
+			<div class="grid_cell" id="grid_cell_5_0"></div>
+			<div class="grid_cell" id="grid_cell_5_1"></div>
+			<div class="grid_cell" id="grid_cell_5_2"></div>
+			<div class="grid_cell" id="grid_cell_5_3"></div>
+			<div class="grid_cell" id="grid_cell_5_4"></div>
+			<div class="grid_cell" id="grid_cell_5_5"></div>
+			<div class="grid_cell" id="grid_cell_5_6"></div>
+			<div class="grid_cell" id="grid_cell_5_7"></div>
+
+			<div class="grid_cell" id="grid_cell_6_0"></div>
+			<div class="grid_cell" id="grid_cell_6_1"></div>
+			<div class="grid_cell" id="grid_cell_6_2"></div>
+			<div class="grid_cell" id="grid_cell_6_3"></div>
+			<div class="grid_cell" id="grid_cell_6_4"></div>
+			<div class="grid_cell" id="grid_cell_6_5"></div>
+			<div class="grid_cell" id="grid_cell_6_6"></div>
+			<div class="grid_cell" id="grid_cell_6_7"></div>
+
+			<div class="grid_cell" id="grid_cell_7_0"></div>
+			<div class="grid_cell" id="grid_cell_7_1"></div>
+			<div class="grid_cell" id="grid_cell_7_2"></div>
+			<div class="grid_cell" id="grid_cell_7_3"></div>
+			<div class="grid_cell" id="grid_cell_7_4"></div>
+			<div class="grid_cell" id="grid_cell_7_5"></div>
+			<div class="grid_cell" id="grid_cell_7_6"></div>
+			<div class="grid_cell" id="grid_cell_7_7"></div>
+		</div>
+		<div class="col-md-4" id="Quincy">
+			<p><img src="watch.jpg"></p>
+			<p id="word"><strong>Quincy is Watching You!</strong><p>
+		</div>
+	</div>
+	<div class="jqmWindow" id="dialog">
+		<div id="result_image">
+		<!--<img src="cry/cry.png">-->
+		</div>
+		<div id="dialogClose">
+		<a href="javascript:winGame();" id="closeButton"></a>
+		</div>
+	</div>
+	<div class="jqmWindow" id="dialog_result">
+		<div id="result_image_result">
+		<!--<img src="cry/cry.png">-->
+		</div>
+		<div id="dialogClose_result">
+		<a href="javascript:game_result();" id="closeButton_result"></a>
+		</div>
+	</div>
+</body>
+</html>

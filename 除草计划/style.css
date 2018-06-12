@@ -1,0 +1,162 @@
+#header
+{
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+}
+
+#header h1
+{
+	font-family: Arial;
+	font-size: 50px;
+	font-weight: bold;
+	margin: 0 auto;
+}
+
+#header #new_game_button
+{
+	display: block;
+	margin: 0 auto 5px;
+	width: 100px;
+	padding: 10px 10px;
+	background-color: #8f7a66;
+	font-family: Arial;
+	color: white;
+	border-radius: 10px;
+	text-decoration: none;
+}
+
+#header #new_game_button: hover
+{
+	background-color: #9f8b77;
+}
+
+#header p
+{
+	font-family: Arial;
+	font-size: 25px;
+	margin: 5px auto;
+}
+
+#container
+{
+}
+
+#points
+{
+	margin: 0px auto;
+	text-align: center;
+}
+
+#grid_container
+{
+	width: 490px;
+	height: 490px;
+	padding: 10px;
+	background-color: #bbada0;
+	border-radius: 6px;
+	position: relative;
+}
+
+/*#turn
+{
+	margin: 0 auto;
+	display: inline;
+	position: absolute;
+	font-family: Arial;
+	font-weight: bold;
+	
+}*/
+
+.grid_cell
+{
+	width: 50px;
+	height: 50px;
+	border-radius: 6px;
+	background-color: #ccc0b3;
+	position: absolute;
+	margin: 0px auto;
+}
+
+.chess_cell
+{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 60px;
+	line-height: 60px;
+	text-align: center;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#Quincy
+{
+	height: 320px;
+	width: 320px;
+	text-align: center;
+	font-size: 24px;
+}
+
+#dialogClose #closeButton 
+{
+	display: block;
+	width: 100px;
+	margin: 10px auto;
+	padding: 10px 10px;
+	background-color: #8f7a66;
+	border-radius: 10px;
+	text-decoration: none;
+	font-family: Arial;
+	color: white;
+	text-align: center;
+}
+
+#dialogClose_result #closeButton_result
+{
+	display: block;
+	width: 100px;
+	margin: 10px auto;
+	padding: 10px 10px;
+	background-color: #8f7a66;
+	border-radius: 10px;
+	text-decoration: none;
+	font-family: Arial;
+	color: white;
+	text-align: center;
+}
+
+#word
+{
+	margin: 0 auto;
+	text-align: center;
+}
+
+#points_grass
+{
+	position: relative;
+	 
+	font-family: Arial;
+	font-size: 30px;
+	left: -55px
+}
+
+#points_0v0
+{
+	position: relative;
+	font-family: Arial;
+	font-size: 30px;
+	left: 60px;
+}
+
+#winImg, #winImg_result
+{
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
