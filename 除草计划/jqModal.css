@@ -4,20 +4,48 @@
 /* The Window's CSS z-index value is respected (takes priority). If none is supplied,
 	the Window's z-index value will be set to 3000 by default (via jqModal.js). */
 	
+.jqmWrap
+{
+    //display: fixed;
+    /*justify-content: center;
+    align-items: center;*/
+    display: relative;
+}
+
 .jqmWindow {
     display: none;
     
-    position: fixed;
-    top: 17%;
+    position: absolute;
+    top: 50%;
     left: 50%;
+    margin-left: -50%;
+    margin-top: -50%
+    transform translate(-50%,-50%)
     
-    margin-left: -300px;
-    width: 600px;
+    //margin-left: -300px;
+    width: auto;
     
     background-color: #EEE;
     color: #333;
     border: 1px solid black;
     padding: 12px;
+    text-align: center;
+}
+
+.techingWindow
+{
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    border-radius: 15px;
+    margin-left: -300px;
+    width: 600px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 12px;
+    width: 35%;
+    height: 100%;
 }
 
 .jqmOverlay { background-color: #000; }

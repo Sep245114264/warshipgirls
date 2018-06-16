@@ -19,6 +19,7 @@ count = 0;
 computerMove = new Array();
 turn = 'black'
 turnDisplay = 'black'
+index = 0;
 
 $(document).ready(function() {
 	$('#dialog').jqm(
@@ -29,12 +30,53 @@ $(document).ready(function() {
 	{
 		modal: true
 	})
+	$('#techingWindow').jqm(
+	{
+	})
+	$('#recmd_ico_point').css('display', 'none');
+	$('#recmd').click();
+	vvTalk(++index, "Buongiorno signor ammiraglio。");
+	vvTalk(++index, '您终于来了，别忘记要做的工作。');
+	chiefTalk(++index, '工作？什么工作？');
+	vvTalk(++index, '您离开的太久了，大家都出去玩儿了。');
+	vvTalk(++index, '现在港区里只有你和昆西两个人。');
+	vvTalk(++index, '而您的工作就是保护好自己和港区。(笑)');
+	chiefTalk(++index, '我该怎么做？');
+	vvTalk(++index, '给您一点提示。');
+	vvTalk(++index, '只要您种草的横、竖、斜八个方向有一棵草');
+	vvTalk(++index, '昆西就会犹豫，而您就有时间在那一条线上全部种上草。');
+	vvTalk(++index, '同样的，只要两边各有一只昆西，她们的中间的草就会被全部吃完。');
+	vvTalk(++index, '需要注意的是，昆西吃草的时候可是赶不走的。');
+	vvTalk(++index, '而且您的每一步必须是有效的。');
+	vvTalk(++index, '也就是说每一步都要至少赶走一只昆西。');
+	chiefTalk(++index, '那如果我找不到怎么办？');
+	vvTalk(++index, '关于这一点，您不用担心，我会把所有有效的位置显示出来。');
+	vvTalk(++index, '如果真的没有，那就只能放弃这一轮了。');
+	vvTalk(++index, '最后，祝您好运。Amore mio。');
+	for( var i = 1; i <= index; ++i )
+	{
+		talkNone(i);
+	}
+	var i = 0;
+	for( i = 1; i <= index; ++i )
+	{
+		/*alert(i);
+		talkDisplay(i);*/
 
+		(function(i){
+		setTimeout(function() {talkDisplay(i);}, i * 1000);})(i);
+	}
+	/*setTimeout(function() {talkDisplay(++index);}, index * 1000);
+	setTimeout(function() {talkDisplay(++index);}, index * 1000);
+	setTimeout(function() {talkDisplay(++index);}, index * 1000);*/
 	new_game();
 })
 
 function new_game()
 {
+	blackPoint= 1;
+	whitePoint = 2;
+	isWin()
 	for( var i = 0; i < 8; ++i )
 	{
 		for( var j = 0; j < 8; ++j )
@@ -386,4 +428,63 @@ function isRule(currentTurn)
 	{
 		setTimeout(function() {getComputerMove()}, 800);
 	}
+}
+
+function teching()
+{
+
+	$('#techingWindow').jqmShow();
+	$('#recmd_ico_point').css('display', 'none');
+	$('#techingSection').scrollTop(99999);
+}
+
+function vvTalk(strIndex, vvString)
+{
+	$('#techingSection').append('<div id="techingSection' + strIndex + '"</div>');
+	$('#techingSection' + strIndex).append('<div class="vvIco" id="vv' + strIndex + '"><img src="vv.png"></div>');
+	$('#techingSection' + strIndex).append('<div class="vvDialogSection" id="vvDia' + strIndex + '"></div>');
+	$('#vv' + strIndex).append('<div class="bubble"></div>')
+	$('#vvDia' + strIndex).append('<span class="vvDialog">' + vvString + '</span>');
+	var vvDia = $('#vvDia' + strIndex);
+	if( vvDia.width() > 220 )
+	{
+		vvDia.css('width', '50%');
+	}
+	else
+	{
+		vvDia.css('width', 'auto');
+	}
+	$('#techingSection').scrollTop(9999);
+}
+
+function chiefTalk(strIndex, chiefString)
+{
+	$('#techingSection').append('<div id="techingSection' + strIndex + '"</div>');
+	$('#techingSection' + strIndex).append('<div class="chiefIco" id="chief' + strIndex + '"><img src="chief.png"></div');
+	$('#techingSection' + strIndex).append('<div class="chiefDialogSection" id="chiefDia' + strIndex + '"></div>');
+	$('#chief' + strIndex).append('<div class="chiefBubble"></div>');
+	$('#chiefDia' + strIndex).append('<span class="chiefDialog">' + chiefString + '</span>');
+	var chiefDia = $('#chiefDia' + strIndex);
+	if( chiefDia.width() > 220 )
+	{
+		chiefDia.css('width', '50%');
+	}
+	else
+	{
+		chiefDia.css('width', 'auto');
+	}
+	var offset = $('#techingSection' + strIndex).width() - chiefDia.width() - 100;
+	chiefDia.css('left', offset);
+	$('#techingSection').scrollTop(9999);
+}
+
+function talkDisplay(strIndex)
+{
+	$('#techingSection' + strIndex).css('display', 'block');
+	$('#techingSection').scrollTop(9999);
+}
+
+function talkNone(strIndex)
+{
+	$('#techingSection' + strIndex).css('display', 'none');
 }

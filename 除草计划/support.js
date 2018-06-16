@@ -3,6 +3,7 @@ const QUINCY = 2;
 const PLAYER_HINT = 3;
 const QUINCY_HINT = -1;
 const SOLID = 4;
+DECLARE = false;
 statQuincy ="0v0_normal.png"
 statQuincyIco = "0v0_normal_ico.png";
 
@@ -78,6 +79,15 @@ function updateScore()
 		}
 	}
 	
+	if( (blackPoint + whitePoint) > 10 && !DECLARE)
+	{
+		DECLARE = true;
+		$('#recmd_ico_point').css('display', 'inline');
+		vvTalk(28, '昆西图片均来源于<a href="https://weibo.com/hikarinoniwa?from=myfollow_all&is_all=1">真名太太</a>');
+		vvTalk(29, 'vv头像来源于<a href="https://weibo.com/u/5779260784?from=myfollow_all&is_all=1">刀菌子</a>');
+		vvTalk(30, '行动方提督头像来源于游戏<a href="http://www.jianniang.com/">战舰少女R</a>');
+		$('#techingSection').scrollTop(9999);
+	}
 	/*$('#turn').append('<p>blackPoint: ' + blackPoint + '</p>');
 	$('#turn').append('<p>whitePoint: ' + whitePoint + '</p>');*/
 	$('#points_grass').text(blackPoint);
@@ -106,6 +116,7 @@ function isWin()
 	else if( blackPoint < whitePoint )
 	{
 		$('#dialog').jqmShow();
+		$('#result_image').append('<img src="0v0_watchyou.jpg" id="winImg">');
 		$('#closeButton').text("输了？");
 		//alert('white is winner');
 	}
@@ -176,7 +187,7 @@ function winnerMaster()
 		//$('#result_image').empty();
 		//$('#result_image').append('<img src="win04.png" id="winImg">')
 		$('#winImg_result').attr('src', 'win04.png');
-	}, 4000);
+	}, 3500);
 	$('#closeButton_result').text("结束了？");
 }
 

@@ -27,10 +27,15 @@
 	</div>
 	<div id="container">
 		<div class="col-md-4" id="points">
-				<p><img src="grass_ico.png"> <img src="0v0_normal_ico.png" id="stat_0v0"></p>
-				<span id="points_grass">0</span> <span id="points_0v0">0</span>
-				    
+			<p><img src="grass_ico.png"> <img src="0v0_normal_ico.png" id="stat_0v0"></p>
+			<span id="points_grass">0</span> <span id="points_0v0">0</span>
 		</div>
+		<div id="recmd_ico">
+			<a href="javascript:teching()"><span id="recmd"><img src="recmd.jpg"></span></a>
+			<!-- <button onclick="teching()"><img src="recmd.jpg"></button> -->
+			<div id="recmd_ico_point"></div>
+		</div>
+		
 		<div class="col-md-4" id="grid_container">
 
 			<div class="grid_cell" id="grid_cell_0_0"></div>
@@ -110,6 +115,7 @@
 			<p id="word"><strong>Quincy is Watching You!</strong><p>
 		</div>
 	</div>
+	<div class="jqmWrap">
 	<div class="jqmWindow" id="dialog">
 		<div id="result_image">
 		<!--<img src="cry/cry.png">-->
@@ -126,5 +132,21 @@
 		<a href="javascript:game_result();" id="closeButton_result"></a>
 		</div>
 	</div>
+	</div>
+	<div class="techingWindow" id="techingWindow">
+		<!-- <button type="button" class="hamburger is-open jqmClose" data-toggle="offcanvas">
+			<span class="hamb-top"></span>
+	        <span class="hamb-middle"></span>
+	    	<span class="hamb-bottom"></span>
+	    </button> -->
+		<div id="windowOutline">
+			<div id="windowInline">
+				<div id="techingSection">
+				</div>
+			</div>
+		</div>
+	</div>
+<script src="js/velocity.min.js"></script>
+<script src="js/velocity.ui.min.js"></script>
 </body>
 </html>
