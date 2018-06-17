@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,12 +13,12 @@
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/jqModal.css">
-	<script type="text/javascript" src="js/jqModal.min.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript" src="js/showanimation.js"></script>
-	<script type="text/javascript" src="js/support.js"></script>
+	<link rel="stylesheet" href={% static 'warships/css/style.css' %}>
+	<link rel="stylesheet" href={% static 'warships/css/jqModal.css' %}>
+	<script type="text/javascript" src={% static 'warships/js/jqModal.min.js' %}></script>
+	<script type="text/javascript" src={% static 'warships/js/main.js' %}></script>
+	<script type="text/javascript" src={% static 'warships/js/showanimation.js' %}></script>
+	<script type="text/javascript" src={% static 'warships/js/support.js' %}></script>
 </head>
 <body>
 	<div id="header">
@@ -27,11 +28,13 @@
 	</div>
 	<div id="container">
 		<div class="col-md-4" id="points">
-			<p><img src="grass_ico.png"> <img src="0v0_normal_ico.png" id="stat_0v0"></p>
+			<p><img src={% static 'warships/grass_ico.png' %}> <img src={% static '0v0_normal_ico.png' %} id="stat_0v0"></p>
 			<span id="points_grass">0</span> <span id="points_0v0">0</span>
+			<br>
+			<p class = "word">难度：<span class="word" id="level">0v0</span></p>
 		</div>
 		<div id="recmd_ico">
-			<a href="javascript:teching()"><span id="recmd"><img src="recmd.jpg"></span></a>
+			<a href="javascript:teching()"><span id="recmd"><img src={% static 'recmd.jpg' %}></span></a>
 			<!-- <button onclick="teching()"><img src="recmd.jpg"></button> -->
 			<div id="recmd_ico_point"></div>
 		</div>
@@ -111,7 +114,7 @@
 			<div class="grid_cell" id="grid_cell_7_7"></div>
 		</div>
 		<div class="col-md-4" id="Quincy">
-			<p><img src="watch.jpg"></p>
+			<p><img src={% static 'warships/watch.jpg' %}></p>
 			<p id="word"><p>
 		</div>
 	</div>
@@ -132,6 +135,9 @@
 		<a href="javascript:game_result();" id="closeButton_result"></a>
 		</div>
 	</div>
+	<div class="jqmWindow" id="chooseLevel">
+		<a href="javascript:changeLevel(0);" id="easyButton">0v0</a>
+		<a href="javascript:changeLevel(1);" id="hardButton">鲲</a>
 	</div>
 	<div class="techingWindow" id="techingWindow">
 		<!-- <button type="button" class="hamburger is-open jqmClose" data-toggle="offcanvas">
@@ -146,7 +152,7 @@
 			</div>
 		</div>
 	</div>
-<script src="js/velocity.min.js"></script>
-<script src="js/velocity.ui.min.js"></script>
+<script src={% static 'warships/js/velocity.min.js' %}></script>
+<script src={% static 'warships/js/velocity.ui.min.js' %}></script>
 </body>
 </html>

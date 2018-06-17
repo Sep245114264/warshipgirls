@@ -13,6 +13,8 @@ for( var i = 0; i < 8; ++i )
 	}
 }
 
+level = 0;
+
 whitePoint = 0;
 blackPoint = 0;
 count = 0;
@@ -33,39 +35,12 @@ $(document).ready(function() {
 	$('#techingWindow').jqm(
 	{
 	})
+	$('#chooseLevel').jqm(
+	{
+		modal: true
+	})
 	$('#recmd_ico_point').css('display', 'none');
-	$('#recmd').click();
-	vvTalk(++index, "Buongiorno signor ammiraglio。");
-	vvTalk(++index, '您终于来了，别忘记要做的工作。');
-	chiefTalk(++index, '工作？什么工作？');
-	vvTalk(++index, '您离开的太久了，大家都出去玩儿了。');
-	vvTalk(++index, '现在港区里只有你和昆西两个人。');
-	vvTalk(++index, '而您的工作就是保护好自己和港区。(笑)');
-	chiefTalk(++index, '我该怎么做？');
-	vvTalk(++index, '给您一点提示。');
-	vvTalk(++index, '只要您种草的横、竖、斜八个方向有一棵草');
-	vvTalk(++index, '昆西就会犹豫，而您就有时间在那一条线上全部种上草。');
-	vvTalk(++index, '同样的，只要两边各有一只昆西，她们的中间的草就会被全部吃完。');
-	vvTalk(++index, '需要注意的是，昆西吃草的时候可是赶不走的。');
-	vvTalk(++index, '而且您的每一步必须是有效的。');
-	vvTalk(++index, '也就是说每一步都要至少赶走一只昆西。');
-	chiefTalk(++index, '那如果我找不到怎么办？');
-	vvTalk(++index, '关于这一点，您不用担心，我会把所有有效的位置显示出来。');
-	vvTalk(++index, '如果真的没有，那就只能放弃这一轮了。');
-	vvTalk(++index, '最后，祝您好运。Amore mio。');
-	for( var i = 1; i <= index; ++i )
-	{
-		talkNone(i);
-	}
-	var i = 0;
-	for( i = 1; i <= index; ++i )
-	{
-		/*alert(i);
-		talkDisplay(i);*/
-
-		(function(i){
-		setTimeout(function() {talkDisplay(i);}, i * 1000);})(i);
-	}
+	$('#chooseLevel').jqmShow();
 	/*setTimeout(function() {talkDisplay(++index);}, index * 1000);
 	setTimeout(function() {talkDisplay(++index);}, index * 1000);
 	setTimeout(function() {talkDisplay(++index);}, index * 1000);*/
@@ -99,8 +74,8 @@ function init()
 	turn = 'black';
 	$('#turn').text(turn);
 	$('#Quincy').css('display', 'none');
-	statQuincy = "0v0_normal.png";
-	$('#stat_0v0').attr("src", '0v0_normal_ico.png');
+	statQuincy = "/static/warships/0v0_normal.png";
+	$('#stat_0v0').attr("src", '/static/warships/0v0_normal_ico.png');
 	board[3][3] = 1;
 	board[3][4] = 2;
 	board[4][3] = 2;
@@ -116,7 +91,7 @@ function updateView()
 	$('#turn').empty();
 	if( turnDisplay == 'black')
 	{
-		$('#turn').attr('src', 'master.png');
+		$('#turn').attr('src', '/static/warships/master.png');
 	}
 	else
 	{
@@ -145,7 +120,7 @@ function updateView()
 				{
 					chess_cell.css('width', '50px');
 					chess_cell.css('height', '50px');
-					chess_cell.css('background', 'url(grass.png)');
+					chess_cell.css('background', 'url(/static/warships/grass.png)');
 					//chess_cell.css('background-color', 'black');
 				}
 				else if( board[i][j] == 2 )
@@ -159,7 +134,7 @@ function updateView()
 				{
 					chess_cell.css('width', '50px');
 					chess_cell.css('height', '50px');
-					chess_cell.css('background', 'url(0v0_eat.png)');
+					chess_cell.css('background', 'url(/static/warships/0v0_eat.png)');
 					//board[i][j] = 2;
 				}
 			}
@@ -323,10 +298,23 @@ function getComputerMove()
 	//updateView();
 
 	//getHintBoard();
+	var bestMove = new Object();
+	var index = 0;
+	var computerX = bestMove.x;
+	var computerY = bestMove.y;
 	getVaildMove(2);
-	var index = Math.floor(Math.random() * 100 % (count / 2)) * 2;
-	var computerX = computerMove[index];
-	var computerY = computerMove[index+1];
+	if( level == 0 )
+	{
+		index = Math.floor(Math.random() * 100 % (count / 2)) * 2;
+		computerX = computerMove[index];
+		computerY = computerMove[index + 1];
+	}
+	else
+	{
+		bestMove = AI();
+	 	computerX = bestMove.x;
+		computerY = bestMove.y;
+	}
 	board[computerX][computerY] = 2;
 	showChessAnimation(computerX, computerY, 2, 200);
 	turn = "black";
@@ -438,7 +426,7 @@ function teching()
 function vvTalk(strIndex, vvString)
 {
 	$('#techingSection').append('<div id="techingSection' + strIndex + '"</div>');
-	$('#techingSection' + strIndex).append('<div class="vvIco" id="vv' + strIndex + '"><img src="vv.png"></div>');
+	$('#techingSection' + strIndex).append('<div class="vvIco" id="vv' + strIndex + '"><img src="/static/warships/vv.png"></div>');
 	$('#techingSection' + strIndex).append('<div class="vvDialogSection" id="vvDia' + strIndex + '"></div>');
 	$('#vv' + strIndex).append('<div class="bubble"></div>')
 	$('#vvDia' + strIndex).append('<span class="vvDialog">' + vvString + '</span>');
@@ -457,7 +445,7 @@ function vvTalk(strIndex, vvString)
 function chiefTalk(strIndex, chiefString)
 {
 	$('#techingSection').append('<div id="techingSection' + strIndex + '"</div>');
-	$('#techingSection' + strIndex).append('<div class="chiefIco" id="chief' + strIndex + '"><img src="chief.png"></div');
+	$('#techingSection' + strIndex).append('<div class="chiefIco" id="chief' + strIndex + '"><img src="/static/warships/chief.png"></div');
 	$('#techingSection' + strIndex).append('<div class="chiefDialogSection" id="chiefDia' + strIndex + '"></div>');
 	$('#chief' + strIndex).append('<div class="chiefBubble"></div>');
 	$('#chiefDia' + strIndex).append('<span class="chiefDialog">' + chiefString + '</span>');

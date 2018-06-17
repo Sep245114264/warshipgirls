@@ -115,7 +115,7 @@ body
 	font-size: 24px;
 }
 
-#dialogClose #closeButton 
+#closeButton, #closeButton_result, #easyButton, #hardButton
 {
 	display: block;
 	width: 100px;
@@ -129,24 +129,23 @@ body
 	text-align: center;
 }
 
-#dialogClose_result #closeButton_result
+#easyButton:hover
 {
-	display: block;
-	width: 100px;
-	margin: 10px auto;
-	padding: 10px 10px;
-	background-color: #8f7a66;
-	border-radius: 10px;
-	text-decoration: none;
-	font-family: Arial;
-	color: white;
-	text-align: center;
+	background-color: #0a83ea
 }
 
-#word
+#hardButton:hover
+{
+	background-color: #b942de
+}
+
+
+.word
 {
 	margin: 0 auto;
 	text-align: center;
+	font-family: Arial;
+	font-size: 20px;
 }
 
 #points_grass

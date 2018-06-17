@@ -9,7 +9,7 @@ function showChessAnimation(changeX, changeY, changeTile, animateTime)
 	}, animateTime);
 	if( changeTile == 1 )
 	{
-		chess_cell.css('background', 'url(grass.png)');
+		chess_cell.css('background', 'url(/static/warships/grass.png)');
 		//chess_cell.css('background-color', 'black');
 	}
 	else 
@@ -35,12 +35,12 @@ function showFlipChessAnimation(changeX, changeY, changeTile)
 		}, 200);
 		if( changeTile == 1 )
 		{
-			chess_cell.css('background', 'url(grass.png)');
+			chess_cell.css('background', 'url(/static/warships/grass.png)');
 			//chess_cell.css('background-color', 'black');
 		}
 		else 
 		{
-			chess_cell.css('background', 'url(0v0_eat.png)');
+			chess_cell.css('background', 'url(/static/warships/0v0_eat.png)');
 			//chess_cell.css('background-color', 'white');
 		}
 	});
@@ -49,7 +49,7 @@ function showFlipChessAnimation(changeX, changeY, changeTile)
 function displayQuincy()
 {
 	$('#Quincy').fadeIn(2000);
-	$('#stat_0v0').attr("src", '0v0_hungry_ico.png');
+	$('#stat_0v0').attr("src", '/static/warships/0v0_hungry_ico.png');
 	statQuincy = "0v0_hungry.png"
 	updateView();
 }
@@ -57,7 +57,7 @@ function displayQuincy()
 function hideQuincy()
 {
 	$('#Quincy').fadeOut();
-	$('#stat_0v0').attr("src", '0v0_normal_ico.png');
+	$('#stat_0v0').attr("src", '/static/warships/0v0_normal_ico.png');
 	statQuincy = "0v0_normal.png";
 	updateView();
 }
