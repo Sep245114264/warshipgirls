@@ -1,0 +1,372 @@
+body
+{
+	background: url("../Main_light_bg_summer.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+#header
+{
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+}
+
+#header h1
+{
+	font-family: Arial;
+	font-size: 50px;
+	font-weight: bold;
+	margin: 0 auto;
+}
+
+#header #new_game_button
+{
+	display: block;
+	margin: 0 auto 5px;
+	width: 100px;
+	padding: 10px 10px;
+	background-color: #8f7a66;
+	font-family: Arial;
+	color: white;
+	border-radius: 10px;
+	text-decoration: none;
+}
+
+#header #new_game_button: hover
+{
+	background-color: #9f8b77;
+}
+
+#header p
+{
+	font-family: Arial;
+	font-size: 25px;
+	margin: 5px auto;
+}
+
+#container
+{
+	width: auto;
+	margin-left: 50px;
+	margin-right: 50px;
+	height: 490px;
+	background-color: white;
+}
+
+#points
+{
+	margin: 0px auto;
+	text-align: center;
+}
+
+#grid_container
+{
+	width: 490px;
+	height: 490px;
+	padding: 10px;
+	background-color: #bbada0;
+	border-radius: 6px;
+	position: relative;
+}
+
+/*#turn
+{
+	margin: 0 auto;
+	display: inline;
+	position: absolute;
+	font-family: Arial;
+	font-weight: bold;
+	
+}*/
+
+.grid_cell
+{
+	width: 50px;
+	height: 50px;
+	border-radius: 6px;
+	background-color: #ccc0b3;
+	position: absolute;
+	margin: 0px auto;
+}
+
+.chess_cell
+{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 60px;
+	line-height: 60px;
+	text-align: center;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#Quincy
+{
+	height: 320px;
+	width: 320px;
+	text-align: center;
+	font-size: 24px;
+}
+
+#dialogClose #closeButton 
+{
+	display: block;
+	width: 100px;
+	margin: 10px auto;
+	padding: 10px 10px;
+	background-color: #8f7a66;
+	border-radius: 10px;
+	text-decoration: none;
+	font-family: Arial;
+	color: white;
+	text-align: center;
+}
+
+#dialogClose_result #closeButton_result
+{
+	display: block;
+	width: 100px;
+	margin: 10px auto;
+	padding: 10px 10px;
+	background-color: #8f7a66;
+	border-radius: 10px;
+	text-decoration: none;
+	font-family: Arial;
+	color: white;
+	text-align: center;
+}
+
+#word
+{
+	margin: 0 auto;
+	text-align: center;
+}
+
+#points_grass
+{
+	position: relative;
+	 
+	font-family: Arial;
+	font-size: 30px;
+	left: -55px
+}
+
+#points_0v0
+{
+	position: relative;
+	font-family: Arial;
+	font-size: 30px;
+	left: 60px;
+}
+
+#winImg, #winImg_result
+{
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#recmd_ico, #recmd
+{
+	position: fixed; 
+	bottom: 3%;
+	left: 4%;
+	transition: width 0.5s, height 0.5s, transform 0.5s;
+}
+#recmd_ico:hover
+{
+	transform: scale(1.2, 1.2);
+}
+
+#recmd_ico_point
+{
+	width: 10px;
+	height: 10px;
+	background-color: red;
+	border-radius: 50%;
+	position: absolute;
+	top: -55px;
+	left: 45px;
+}
+
+/*******************/
+/*********************/
+/*.hamburger {
+  background: transparent;
+  border: none;
+  //display: block;
+  height: 32px;
+  width: 32px;
+  margin-left: 15px;
+  position: absolute;
+  top: 15px;
+  left: 87%;
+  z-index: 9999;
+}
+.hamburger:hover {
+  outline: none;
+}
+.hamburger:focus {
+  outline: none;
+}
+.hamburger:active {
+  outline: none;
+}
+.hamb-top,
+.hamb-middle,
+.hamb-bottom {
+  height: 4px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+.hamburger .hamb-top {
+  -webkit-transform: rotate(45deg);
+  transition: transform 1s;
+  background-color: #FFFFFF;
+  margin-top: -2px;
+  top: 50%;
+}
+
+.hamburger .hamb-bottom {
+  -webkit-transform: rotate(-45deg);
+  transition: transform 1s;
+  background-color: #FFFFFF;
+  margin-top: -2px;
+  top: 50%;
+}
+
+.hamburger:hover .hamb-top
+{
+	transform: rotate(360deg);
+}
+
+.hamburger:hover .hamb-bottom
+{
+	transform: rotate(-360deg);
+}*/
+
+#windowOutline
+{
+	width: 95%;
+	height: 96%;
+	position: absolute;
+	background-color: black;
+	border-radius: 15px;
+}
+
+#windowInline
+{
+	top: 15px;
+	left: 15px;
+	width: 93%;
+	height: 95%;
+	position: absolute;
+	background-color: white;
+	border-radius: 15px;
+}
+
+#techingSection
+{
+	position: absolute;
+	height: 95%;
+	width: 93%;
+	overflow-y: scroll;
+}
+
+.vvIco, .chiefIco
+{
+	margin: 10px;
+	display: inline-block;
+}
+
+.vvDialogSection
+{
+	display: inline-block;
+	margin-top: 25px;
+	margin-left: 10px;
+	width: auto;
+	height: auto;
+	word-wrap: break-word;
+	position: absolute;
+	//background-color: blue;
+	background: linear-gradient(black, red);
+	color: white;
+	border-radius: 5px;
+	padding: 5px;
+
+	
+}
+
+.bubble, .chiefBubble
+{
+	position: relative;
+	width: 10px;
+	height: 10px;
+	background-color: #6A0000;
+	transform: rotate(45deg);
+	top: -35px;
+	left: 65px;
+}
+
+.vvDialog, .chiefDialog
+{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.chiefDialogSection
+{
+	display: inline-block;
+	margin-top: 25px;
+	margin-left: 10px;
+	width: auto;
+	height: auto;
+	word-wrap: break-word;
+	position: absolute;
+	//background-color: blue;
+	background: linear-gradient(black, red);
+	color: white;
+	border-radius: 5px;
+	padding: 5px;
+	left: 27%;
+	
+}
+
+.chiefIco
+{
+	position: relative;
+	left: 80%;
+}
+
+.chiefBubble
+{
+	left: -17px;
+}
+
+a:link
+{
+	color: #23d0da;
+}
+
+a:hover
+{
+	color: red;
+}
+
+a:visited
+{
+	color: #23d0da;
+}
+
+#endImg
+{
+	display: none;
+}
